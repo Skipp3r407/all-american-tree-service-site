@@ -36,36 +36,48 @@ const services = [
     title: "Tree Trimming & Removal",
     description:
       "Precision trimming, hazardous limb removal, and full removals handled with property protection in mind.",
+    photo:
+      "https://images.unsplash.com/photo-1767642321050-23f637b1f0be?auto=format&fit=crop&w=900&q=80",
   },
   {
     icon: "🪵",
     title: "Stump Grinding",
     description:
       "Fast grinding that clears ugly stumps, reduces trip hazards, and gets your yard ready for its next use.",
+    photo:
+      "https://images.unsplash.com/photo-1580852827691-c192e508fa7e?auto=format&fit=crop&w=900&q=80",
   },
   {
     icon: "🚜",
     title: "Land Clearing",
     description:
       "Brush, small tree, and overgrowth clearing for lots, driveways, fence lines, and outdoor projects.",
+    photo:
+      "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=80",
   },
   {
     icon: "🧹",
     title: "Debris Removal",
     description:
       "Clean haul-off for limbs, logs, brush piles, and storm debris so the job looks finished.",
+    photo:
+      "https://images.unsplash.com/photo-1651447041389-1f499536b4cb?auto=format&fit=crop&w=900&q=80",
   },
   {
     icon: "⛈️",
     title: "Storm Cleanup",
     description:
       "Rapid cleanup after rough weather, fallen limbs, blocked access, and damaged trees.",
+    photo:
+      "https://images.unsplash.com/photo-1641366784341-446c64b421a2?auto=format&fit=crop&w=900&q=80",
   },
   {
     icon: "🚨",
     title: "Emergency Tree Service",
     description:
       "24/7 response when a tree threatens your home, roof, driveway, power access, or business.",
+    photo:
+      "https://images.unsplash.com/photo-1754321860056-ca7254d5e7ac?auto=format&fit=crop&w=900&q=80",
   },
 ];
 
@@ -73,7 +85,7 @@ const navItems = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Before/After", href: "#beforeafter" },
-  { label: "Gallery", href: "#gallery" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Areas", href: "#areas" },
   { label: "Reviews", href: "#reviews" },
   { label: "FAQ", href: "#faq" },
@@ -82,6 +94,9 @@ const navItems = [
 const beforeAfter = [
   {
     title: "Hazardous Tree Removal",
+    location: "Storm-damaged tree cleanup",
+    result: "Unsafe canopy removed, logs cut down, and access restored.",
+    highlights: ["Hazard reduced", "Clean haul-off", "Property protected"],
     before:
       "https://images.unsplash.com/photo-1754321860056-ca7254d5e7ac?auto=format&fit=crop&w=1200&q=80",
     after:
@@ -89,6 +104,9 @@ const beforeAfter = [
   },
   {
     title: "Stump & Log Cleanup",
+    location: "Post-removal yard reset",
+    result: "Stump area cleared and bulky debris staged for a cleaner finish.",
+    highlights: ["Trip hazards removed", "Yard opened up", "Ready for next use"],
     before:
       "https://images.unsplash.com/photo-1580852827691-c192e508fa7e?auto=format&fit=crop&w=1200&q=80",
     after:
@@ -336,9 +354,10 @@ function BeforeAfterCard({ item }: { item: (typeof beforeAfter)[0] }) {
   return (
     <motion.article
       variants={fadeUp}
-      className="group overflow-hidden rounded-[2rem] border border-white/10 bg-zinc-950 shadow-2xl shadow-black"
+      whileHover={{ y: -6 }}
+      className="group overflow-hidden rounded-[2rem] border border-white/10 bg-black shadow-2xl shadow-black transition hover:border-lime-300/35 hover:shadow-[0_0_55px_rgba(132,204,22,0.16)]"
     >
-      <div className="relative h-[420px] overflow-hidden">
+      <div className="relative h-[360px] overflow-hidden sm:h-[460px]">
         <Image
           src={item.after}
           alt={`${item.title} after`}
@@ -355,35 +374,62 @@ function BeforeAfterCard({ item }: { item: (typeof beforeAfter)[0] }) {
             alt={`${item.title} before`}
             fill
             sizes="(min-width: 1024px) 50vw, 100vw"
-            className="object-cover grayscale"
+            className="object-cover grayscale contrast-110"
           />
         </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/35" />
         <div
-          className="absolute inset-y-0 w-1 bg-lime-300 shadow-[0_0_24px_rgba(190,242,100,0.95)]"
+          className="absolute inset-y-0 z-10 w-1 -translate-x-1/2 bg-lime-300 shadow-[0_0_28px_rgba(190,242,100,0.95)]"
           style={{ left: `${position}%` }}
-        />
-        <div className="absolute left-4 top-4 rounded-full bg-red-600 px-4 py-2 text-sm font-black text-white shadow-lg">
-          BEFORE ❌
+        >
+          <span className="absolute left-1/2 top-1/2 grid size-14 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-lime-200 bg-black/85 text-lg font-black text-lime-200 shadow-[0_0_30px_rgba(132,204,22,0.6)] backdrop-blur">
+            |||
+          </span>
         </div>
-        <div className="absolute right-4 top-4 rounded-full bg-lime-400 px-4 py-2 text-sm font-black text-black shadow-lg">
-          AFTER ✅
+        <div className="absolute left-4 top-4 z-10 rounded-full border border-red-300/30 bg-red-600/90 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-white shadow-lg">
+          Before
         </div>
-        <input
-          aria-label={`Compare before and after for ${item.title}`}
-          type="range"
-          min="12"
-          max="88"
-          value={position}
-          onChange={(event) => setPosition(Number(event.target.value))}
-          className="absolute inset-x-6 bottom-6 accent-lime-300"
-        />
+        <div className="absolute right-4 top-4 z-10 rounded-full bg-lime-400 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-black shadow-lg">
+          After
+        </div>
+        <div className="absolute inset-x-4 bottom-4 z-10 rounded-[1.25rem] border border-white/10 bg-black/72 p-4 backdrop-blur">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[0.24em] text-lime-300">
+                Slide to compare
+              </p>
+              <p className="mt-1 text-sm font-bold text-zinc-200">
+                {position}% reveal
+              </p>
+            </div>
+            <input
+              aria-label={`Compare before and after for ${item.title}`}
+              type="range"
+              min="12"
+              max="88"
+              value={position}
+              onChange={(event) => setPosition(Number(event.target.value))}
+              className="before-after-range w-full accent-lime-300 sm:max-w-64"
+            />
+          </div>
+        </div>
       </div>
-      <div className="p-6">
-        <h3 className="text-2xl font-black text-white">{item.title}</h3>
-        <p className="mt-3 text-zinc-400">
-          Drag the slider to see the kind of cleanup and finish homeowners expect
-          from a professional crew.
+      <div className="p-6 sm:p-7">
+        <p className="text-sm font-black uppercase tracking-[0.28em] text-lime-300">
+          {item.location}
         </p>
+        <h3 className="mt-3 text-3xl font-black text-white">{item.title}</h3>
+        <p className="mt-3 leading-7 text-zinc-400">{item.result}</p>
+        <div className="mt-5 flex flex-wrap gap-2">
+          {item.highlights.map((highlight) => (
+            <span
+              key={highlight}
+              className="rounded-full border border-lime-300/20 bg-lime-400/10 px-3 py-2 text-xs font-black text-lime-100"
+            >
+              {highlight}
+            </span>
+          ))}
+        </div>
       </div>
     </motion.article>
   );
@@ -859,21 +905,32 @@ export default function Home() {
                 onClick={() => setActiveService(service)}
                 variants={fadeUp}
                 whileHover={{ y: -10, scale: 1.025 }}
-                className={`group rounded-[1.75rem] border p-7 text-left shadow-lg shadow-black transition hover:border-lime-300/60 hover:bg-zinc-900 hover:shadow-[0_0_45px_rgba(132,204,22,0.24)] ${
+                className={`group relative overflow-hidden rounded-[1.75rem] border p-7 text-left shadow-lg shadow-black transition hover:border-lime-300/60 hover:bg-zinc-900 hover:shadow-[0_0_45px_rgba(132,204,22,0.24)] focus-visible:border-lime-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime-300/60 ${
                   activeService.title === service.title
                     ? "border-lime-300/70 bg-lime-400/10 shadow-[0_0_45px_rgba(132,204,22,0.22)]"
                     : "border-white/10 bg-zinc-950/80"
                 }`}
               >
-                <div className="grid size-16 place-items-center rounded-2xl bg-lime-400/10 text-3xl ring-1 ring-lime-300/20 transition group-hover:bg-lime-400/20">
-                  {service.icon}
+                <Image
+                  src={service.photo}
+                  alt={`${service.title} service work`}
+                  fill
+                  sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className="object-cover opacity-0 transition duration-500 group-hover:scale-105 group-hover:opacity-70 group-focus-visible:scale-105 group-focus-visible:opacity-70"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-black/95 via-black/88 to-black/80 transition duration-500 group-hover:from-black/78 group-hover:via-black/62 group-hover:to-black/70 group-focus-visible:from-black/78 group-focus-visible:via-black/62 group-focus-visible:to-black/70" />
+                <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-lime-400/20 to-transparent opacity-0 transition duration-500 group-hover:opacity-100 group-focus-visible:opacity-100" />
+                <div className="relative z-10">
+                  <div className="grid size-16 place-items-center rounded-2xl bg-lime-400/10 text-3xl ring-1 ring-lime-300/20 transition group-hover:bg-lime-400/25 group-focus-visible:bg-lime-400/25">
+                    {service.icon}
+                  </div>
+                  <h3 className="mt-7 text-2xl font-black text-white drop-shadow">
+                    {service.title}
+                  </h3>
+                  <p className="mt-4 leading-7 text-zinc-400 transition group-hover:text-zinc-100 group-focus-visible:text-zinc-100">
+                    {service.description}
+                  </p>
                 </div>
-                <h3 className="mt-7 text-2xl font-black text-white">
-                  {service.title}
-                </h3>
-                <p className="mt-4 leading-7 text-zinc-400">
-                  {service.description}
-                </p>
               </motion.button>
             ))}
           </motion.div>
@@ -912,7 +969,7 @@ export default function Home() {
           <SectionHeader
             eyebrow="Before / After"
             title="Visual proof sells the job before we say a word."
-            description="Interactive before and after showcases help homeowners see the value of professional cleanup, removal, and clearing."
+            description="Drag each comparison to see how professional removal, cleanup, and finishing work changes the property."
           />
           <motion.div
             variants={stagger}
@@ -924,6 +981,40 @@ export default function Home() {
             {beforeAfter.map((item) => (
               <BeforeAfterCard key={item.title} item={item} />
             ))}
+          </motion.div>
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true, margin: "-120px" }}
+            className="mt-10 grid gap-5 rounded-[2rem] border border-lime-300/20 bg-black p-6 shadow-2xl shadow-black md:grid-cols-[1fr_auto] md:items-center md:p-8"
+          >
+            <div>
+              <p className="text-sm font-black uppercase tracking-[0.28em] text-lime-300">
+                Want your yard next?
+              </p>
+              <h3 className="mt-3 text-3xl font-black text-white">
+                Send photos and we will help size up the job.
+              </h3>
+              <p className="mt-3 max-w-2xl leading-7 text-zinc-400">
+                Use the estimate form for tree photos, access details, hazards,
+                timing, and cleanup needs.
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 sm:flex-row md:flex-col">
+              <a
+                href="/gallery"
+                className="rounded-full border border-lime-300/45 px-7 py-4 text-center font-black text-white transition hover:bg-lime-300/10"
+              >
+                View Full Gallery
+              </a>
+              <a
+                href="#estimate"
+                className="rounded-full bg-lime-400 px-7 py-4 text-center font-black text-black transition hover:bg-lime-300"
+              >
+                Request Estimate
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>

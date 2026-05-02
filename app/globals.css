@@ -91,6 +91,22 @@ html {
   mix-blend-mode: screen;
 }
 
+.before-after-range {
+  cursor: ew-resize;
+}
+
+.before-after-range::-webkit-slider-thumb {
+  height: 1.35rem;
+  width: 1.35rem;
+  cursor: ew-resize;
+}
+
+.before-after-range::-moz-range-thumb {
+  height: 1.35rem;
+  width: 1.35rem;
+  cursor: ew-resize;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .reveal {
     animation: reveal-up both;
