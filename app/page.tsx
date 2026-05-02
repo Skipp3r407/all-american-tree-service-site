@@ -602,7 +602,7 @@ export default function Home() {
                 width={1120}
                 height={364}
                 priority
-                className="h-14 w-auto sm:h-20 lg:h-24"
+                className="h-[95px] w-auto sm:h-[136px] lg:h-[163px]"
               />
             </motion.div>
           </Link>

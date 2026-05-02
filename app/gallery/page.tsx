@@ -101,7 +101,7 @@ export default function GalleryPage() {
               width={1120}
               height={364}
               priority
-              className="h-14 w-auto sm:h-20 lg:h-24"
+              className="h-[95px] w-auto sm:h-[136px] lg:h-[163px]"
             />
           </Link>
           <div className="hidden items-center gap-7 text-sm font-bold text-zinc-300 xl:flex">
