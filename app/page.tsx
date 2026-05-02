@@ -3,6 +3,7 @@
 import { FormEvent, PointerEvent, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const phoneNumber = "9048889557";
 const phoneLabel = "(904) 888-9557";
@@ -85,7 +86,7 @@ const navItems = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Before/After", href: "#beforeafter" },
-  { label: "Gallery", href: "/gallery" },
+  { label: "Gallery", href: "#gallery" },
   { label: "Areas", href: "#areas" },
   { label: "Reviews", href: "#reviews" },
   { label: "FAQ", href: "#faq" },
@@ -586,9 +587,9 @@ export default function Home() {
           />
         ))}
       </div>
-      <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-2 sm:px-8 sm:py-3">
-          <a href="#home" className="flex min-w-0 items-center">
+      <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/95 backdrop-blur">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 sm:px-8 sm:py-3">
+          <Link href="#home" className="flex min-w-0 items-center">
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -601,22 +602,28 @@ export default function Home() {
                 width={1120}
                 height={364}
                 priority
-                className="h-14 w-auto sm:h-20 lg:h-28 xl:h-[196px]"
+                className="h-14 w-auto sm:h-20 lg:h-24"
               />
             </motion.div>
-          </a>
+          </Link>
           <div className="hidden items-center gap-7 text-sm font-bold text-zinc-300 xl:flex">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
                 className="transition hover:text-lime-300"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
           <div className="flex items-center gap-3">
+            <a
+              href="#estimate"
+              className="hidden rounded-full border border-lime-300/40 px-5 py-3 text-sm font-black text-white transition hover:bg-lime-300/10 sm:inline-flex"
+            >
+              Free Estimate
+            </a>
             <a
               href={`tel:${phoneNumber}`}
               className="hidden rounded-full bg-lime-400 px-5 py-3 text-sm font-black text-black shadow-[0_0_32px_rgba(132,204,22,0.45)] transition hover:-translate-y-0.5 hover:bg-lime-300 sm:inline-flex"
@@ -645,14 +652,14 @@ export default function Home() {
             >
               <div className="grid gap-2 px-5 py-5">
                 {navItems.map((item) => (
-                  <a
+                  <Link
                     key={item.href}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
                     className="rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 font-black text-white transition hover:border-lime-300/50 hover:text-lime-300"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </motion.div>

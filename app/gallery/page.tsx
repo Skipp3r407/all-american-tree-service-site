@@ -83,7 +83,7 @@ const navItems = [
   { label: "About", href: "/#about" },
   { label: "Services", href: "/#services" },
   { label: "Before/After", href: "/#beforeafter" },
-  { label: "Gallery", href: "/gallery" },
+  { label: "Gallery", href: "/#gallery" },
   { label: "Areas", href: "/#areas" },
   { label: "Reviews", href: "/#reviews" },
   { label: "FAQ", href: "/#faq" },
@@ -110,7 +110,7 @@ export default function GalleryPage() {
                 key={item.href}
                 href={item.href}
                 className={`transition hover:text-lime-300 ${
-                  item.href === "/gallery" ? "text-lime-300" : ""
+                  item.href === "/#gallery" ? "text-lime-300" : ""
                 }`}
               >
                 {item.label}
@@ -126,7 +126,7 @@ export default function GalleryPage() {
             </Link>
             <a
               href={`tel:${phoneNumber}`}
-              className="rounded-full bg-lime-400 px-5 py-3 text-sm font-black text-black shadow-[0_0_32px_rgba(132,204,22,0.45)] transition hover:bg-lime-300"
+              className="hidden rounded-full bg-lime-400 px-5 py-3 text-sm font-black text-black shadow-[0_0_32px_rgba(132,204,22,0.45)] transition hover:bg-lime-300 sm:inline-flex"
             >
               Call Now
             </a>
@@ -141,7 +141,7 @@ export default function GalleryPage() {
                       key={item.href}
                       href={item.href}
                       className={`rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 font-black text-white transition hover:border-lime-300/50 hover:text-lime-300 ${
-                        item.href === "/gallery" ? "text-lime-300" : ""
+                        item.href === "/#gallery" ? "text-lime-300" : ""
                       }`}
                     >
                       {item.label}
