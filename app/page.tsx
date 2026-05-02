@@ -1114,7 +1114,7 @@ export default function Home() {
               {serviceAreas.map((area) => (
                 <div
                   key={area}
-                  className="rounded-2xl border border-white/10 bg-zinc-950 px-5 py-4 text-lg font-bold text-zinc-100"
+                  className="rounded-2xl border border-white/10 bg-zinc-950 px-5 py-4 text-lg font-bold text-zinc-100 transition hover:-translate-y-1 hover:border-lime-300 hover:bg-lime-400 hover:text-black hover:shadow-[0_0_32px_rgba(132,204,22,0.45)]"
                 >
                   {area}
                 </div>
@@ -1182,7 +1182,11 @@ export default function Home() {
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: true, margin: "-120px" }}
-                  className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-zinc-950"
+                  className={`overflow-hidden rounded-[1.5rem] border transition ${
+                    isOpen
+                      ? "border-lime-300 bg-lime-400 text-black shadow-[0_0_32px_rgba(132,204,22,0.35)]"
+                      : "border-white/10 bg-zinc-950 text-white"
+                  }`}
                 >
                   <button
                     type="button"
@@ -1190,10 +1194,16 @@ export default function Home() {
                     className="flex w-full items-center justify-between gap-5 px-6 py-5 text-left"
                     aria-expanded={isOpen}
                   >
-                    <span className="text-lg font-black text-white">
+                    <span className="text-lg font-black">
                       {faq.question}
                     </span>
-                    <span className="grid size-9 shrink-0 place-items-center rounded-full bg-lime-400 text-xl font-black text-black">
+                    <span
+                      className={`grid size-9 shrink-0 place-items-center rounded-full text-xl font-black ${
+                        isOpen
+                          ? "bg-black text-lime-300"
+                          : "bg-lime-400 text-black"
+                      }`}
+                    >
                       {isOpen ? "−" : "+"}
                     </span>
                   </button>
@@ -1204,7 +1214,7 @@ export default function Home() {
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                       >
-                        <p className="border-t border-white/10 px-6 py-5 leading-7 text-zinc-400">
+                        <p className="border-t border-black/15 px-6 py-5 leading-7 text-black/75">
                           {faq.answer}
                         </p>
                       </motion.div>
