@@ -79,6 +79,16 @@ const categories = [
   "Debris Removal",
 ];
 
+const navItems = [
+  { label: "About", href: "/#about" },
+  { label: "Services", href: "/#services" },
+  { label: "Before/After", href: "/#beforeafter" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Areas", href: "/#areas" },
+  { label: "Reviews", href: "/#reviews" },
+  { label: "FAQ", href: "/#faq" },
+];
+
 export default function GalleryPage() {
   return (
     <main className="min-h-screen bg-black text-white">
@@ -94,6 +104,19 @@ export default function GalleryPage() {
               className="h-14 w-auto sm:h-20 lg:h-24"
             />
           </Link>
+          <div className="hidden items-center gap-7 text-sm font-bold text-zinc-300 xl:flex">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`transition hover:text-lime-300 ${
+                  item.href === "/gallery" ? "text-lime-300" : ""
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
           <div className="flex items-center gap-3">
             <Link
               href="/#estimate"
@@ -124,13 +147,7 @@ export default function GalleryPage() {
         <div className="absolute inset-0 -z-20 bg-gradient-to-t from-black via-black/30 to-black/70" />
 
         <div className="mx-auto max-w-7xl">
-          <Link
-            href="/"
-            className="inline-flex rounded-full border border-white/15 bg-black/55 px-4 py-2 text-sm font-black text-lime-200 backdrop-blur transition hover:border-lime-300/50"
-          >
-            Back to Home
-          </Link>
-          <div className="mt-10 max-w-4xl">
+          <div className="max-w-4xl">
             <p className="text-sm font-black uppercase tracking-[0.34em] text-lime-300">
               Work Gallery
             </p>
