@@ -448,7 +448,7 @@ export default function Home() {
     <main
       ref={pageRef}
       onPointerMove={handlePointerMove}
-      className="relative min-h-screen overflow-hidden bg-black text-white [--smoke-x:50%] [--smoke-y:35%]"
+      className="relative min-h-svh overflow-hidden bg-black text-white [--smoke-x:50%] [--smoke-y:35%]"
     >
       <script
         type="application/ld+json"
@@ -512,7 +512,7 @@ export default function Home() {
       </AnimatePresence>
       <div
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
+        className="pointer-events-none fixed inset-0 z-0 hidden overflow-hidden md:block"
       >
         <div className="smoke-cursor absolute inset-0" />
         {smokePlumes.map((plume) => (
@@ -615,7 +615,7 @@ export default function Home() {
 
       <section
         id="home"
-        className="relative isolate flex min-h-screen items-center overflow-hidden px-5 pt-28 sm:px-8"
+        className="relative isolate flex min-h-svh items-center overflow-hidden px-5 pt-28 sm:px-8"
       >
         <Image
           src="https://images.unsplash.com/photo-1754321860056-ca7254d5e7ac?auto=format&fit=crop&w=2200&q=80"
@@ -629,7 +629,7 @@ export default function Home() {
         <div className="absolute inset-0 -z-20 bg-gradient-to-t from-black via-transparent to-black/40" />
         <motion.div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(132,204,22,0.26),transparent_28%),radial-gradient(circle_at_80%_35%,rgba(34,197,94,0.18),transparent_24%)]"
+          className="absolute inset-0 -z-10 hidden bg-[radial-gradient(circle_at_20%_20%,rgba(132,204,22,0.26),transparent_28%),radial-gradient(circle_at_80%_35%,rgba(34,197,94,0.18),transparent_24%)] md:block"
           animate={{ backgroundPosition: ["0% 0%", "100% 50%", "0% 0%"] }}
           transition={{ duration: 14, repeat: Infinity, ease: "linear" }}
         />
@@ -637,7 +637,7 @@ export default function Home() {
           <motion.span
             key={particle.id}
             aria-hidden
-            className="absolute z-0 size-1.5 rounded-full bg-lime-300/60 shadow-[0_0_18px_rgba(190,242,100,0.9)]"
+            className="absolute z-0 hidden size-1.5 rounded-full bg-lime-300/60 shadow-[0_0_18px_rgba(190,242,100,0.9)] md:block"
             style={{ left: particle.left, top: particle.top }}
             animate={{ y: [0, -28, 0], opacity: [0.25, 1, 0.25] }}
             transition={{
