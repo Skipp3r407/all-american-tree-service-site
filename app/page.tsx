@@ -479,10 +479,10 @@ export default function Home() {
                 <Image
                   src="/logos/logo.png"
                   alt="All American Tree Service & More LLC"
-                  width={840}
-                  height={273}
+                  width={1092}
+                  height={355}
                   priority
-                  className="h-40 w-auto sm:h-56"
+                  className="h-52 w-auto sm:h-[291px]"
                 />
               </div>
               <motion.div
