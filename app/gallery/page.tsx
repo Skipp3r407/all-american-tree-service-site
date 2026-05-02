@@ -130,6 +130,32 @@ export default function GalleryPage() {
             >
               Call Now
             </a>
+            <details className="group relative xl:hidden">
+              <summary className="list-none rounded-full border border-white/15 bg-white/10 px-4 py-3 text-sm font-black text-white transition hover:border-lime-300/40 hover:text-lime-300 [&::-webkit-details-marker]:hidden">
+                Menu
+              </summary>
+              <div className="absolute right-0 top-full mt-3 w-72 overflow-hidden rounded-[1.5rem] border border-white/10 bg-black/95 p-3 shadow-2xl shadow-black backdrop-blur">
+                <div className="grid gap-2">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className={`rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 font-black text-white transition hover:border-lime-300/50 hover:text-lime-300 ${
+                        item.href === "/gallery" ? "text-lime-300" : ""
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                  <Link
+                    href="/#estimate"
+                    className="rounded-2xl bg-lime-400 px-4 py-3 text-center font-black text-black transition hover:bg-lime-300"
+                  >
+                    Free Estimate
+                  </Link>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
       </nav>
