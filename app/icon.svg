@@ -1,0 +1,14 @@
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">All American Tree Service icon logo</title>
+  <desc id="desc">Modern icon-only tree service logo in black, white, and bright green.</desc>
+  <rect width="800" height="800" rx="120" fill="#020403"/>
+  <circle cx="400" cy="355" r="250" fill="#101711" stroke="#9BEA36" stroke-width="22"/>
+  <path d="M400 116L632 459H482L566 604H234L318 459H168L400 116Z" fill="#9BEA36"/>
+  <path d="M400 320L532 515H448L496 600H304L352 515H268L400 320Z" fill="#020403" opacity=".18"/>
+  <path d="M400 508V704" stroke="#F8FAFC" stroke-width="44" stroke-linecap="round"/>
+  <path d="M258 678H542" stroke="#9BEA36" stroke-width="34" stroke-linecap="round"/>
+  <path d="M590 594L681 651L644 711L553 654L590 594Z" fill="#9BEA36"/>
+  <path d="M654 682L724 726" stroke="#F8FAFC" stroke-width="24" stroke-linecap="round"/>
+  <path d="M553 654L526 697" stroke="#F8FAFC" stroke-width="16" stroke-linecap="round"/>
+  <path d="M264 735H536" stroke="#F8FAFC" stroke-width="14" stroke-linecap="round" opacity=".9"/>
+</svg>

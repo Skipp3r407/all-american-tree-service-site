@@ -541,12 +541,13 @@ export default function Home() {
         ))}
       </div>
       <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-8">
-          <a href="#home" className="flex items-center">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-2 sm:px-8 sm:py-3">
+          <a href="#home" className="flex min-w-0 items-center">
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.85, ease: "easeOut" }}
+              className="shrink-0"
             >
               <Image
                 src="/logos/logo.png"
@@ -554,7 +555,7 @@ export default function Home() {
                 width={1120}
                 height={364}
                 priority
-                className="h-[154px] w-auto sm:h-[196px]"
+                className="h-14 w-auto sm:h-20 lg:h-28 xl:h-[196px]"
               />
             </motion.div>
           </a>
@@ -572,7 +573,7 @@ export default function Home() {
           <div className="flex items-center gap-3">
             <a
               href={`tel:${phoneNumber}`}
-              className="rounded-full bg-lime-400 px-5 py-3 text-sm font-black text-black shadow-[0_0_32px_rgba(132,204,22,0.45)] transition hover:-translate-y-0.5 hover:bg-lime-300"
+              className="hidden rounded-full bg-lime-400 px-5 py-3 text-sm font-black text-black shadow-[0_0_32px_rgba(132,204,22,0.45)] transition hover:-translate-y-0.5 hover:bg-lime-300 sm:inline-flex"
             >
               Call Now
             </a>
