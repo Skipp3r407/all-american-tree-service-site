@@ -1,0 +1,18 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">All American Tree Service &amp; More LLC stacked logo</title>
+  <desc id="desc">Premium stacked black, white, and bright green tree service logo with a modern tree icon.</desc>
+  <rect width="1200" height="1200" rx="96" fill="#020403"/>
+  <circle cx="600" cy="318" r="202" fill="#101711" stroke="#9BEA36" stroke-width="16"/>
+  <path d="M600 130L785 404H665L732 520H468L535 404H415L600 130Z" fill="#9BEA36"/>
+  <path d="M600 292L705 448H638L676 514H524L562 448H495L600 292Z" fill="#020403" opacity=".18"/>
+  <path d="M600 448V650" stroke="#F8FAFC" stroke-width="32" stroke-linecap="round"/>
+  <path d="M486 630H714" stroke="#9BEA36" stroke-width="26" stroke-linecap="round"/>
+  <path d="M470 677H730" stroke="#F8FAFC" stroke-width="14" stroke-linecap="round" opacity=".88"/>
+  <path d="M784 558L858 604L826 655L752 609L784 558Z" fill="#9BEA36"/>
+  <path d="M836 628L897 665" stroke="#F8FAFC" stroke-width="18" stroke-linecap="round"/>
+  <path d="M752 609L730 643" stroke="#F8FAFC" stroke-width="12" stroke-linecap="round"/>
+  <text x="600" y="800" text-anchor="middle" font-family="Arial Black, Montserrat, Arial, sans-serif" font-size="92" font-weight="900" letter-spacing="7" fill="#F8FAFC">ALL AMERICAN</text>
+  <text x="600" y="900" text-anchor="middle" font-family="Arial Black, Montserrat, Arial, sans-serif" font-size="54" font-weight="900" letter-spacing="10" fill="#9BEA36">TREE SERVICE</text>
+  <text x="600" y="972" text-anchor="middle" font-family="Arial, Montserrat, sans-serif" font-size="34" font-weight="700" letter-spacing="8" fill="#CBD5E1">&amp; MORE LLC</text>
+  <path d="M252 1035H948" stroke="#9BEA36" stroke-width="10" stroke-linecap="round"/>
+</svg>
