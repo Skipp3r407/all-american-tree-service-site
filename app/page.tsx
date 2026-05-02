@@ -587,7 +587,7 @@ export default function Home() {
           />
         ))}
       </div>
-      <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/95 backdrop-blur">
+      <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 sm:px-8 sm:py-3">
           <Link href="#home" className="flex min-w-0 items-center">
             <motion.div
